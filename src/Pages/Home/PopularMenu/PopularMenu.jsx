@@ -1,17 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import ItemCard from "../../../Shared/ItemCard/ItemCard";
+import useMenu from "../../../hooks/useMenu";
 
 const PopularMenu = () => {
-  const [items, setItems] = useState([]);
-  useEffect(() => {
-    fetch("menu.json")
-      .then((res) => res.json())
-      .then((data) => {
-        const filterWithPopular = data.filter((i) => i.category === "popular");
-        setItems(filterWithPopular);
-      });
-  }, []);
+  const [items, loading] = useMenu();
+  const filterWithPopular = items?.filter((i) => i.category === "popular");
   return (
     <div className="py-16">
       <SectionTitle
@@ -19,7 +13,7 @@ const PopularMenu = () => {
         subHeading={"---Check it out---"}
       ></SectionTitle>
       <div className="grid md:grid-cols-2 gap-10 p-4 md:p-8">
-        {items.map((item) => (
+        {filterWithPopular.map((item) => (
           <ItemCard key={item._id} item={item}></ItemCard>
         ))}
       </div>
