@@ -4,7 +4,11 @@ import Cover from "../../../Shared/Cover/Cover";
 import coverImg from "../../../assets/menu/banner3.jpg";
 import useMenu from "../../../hooks/useMenu";
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
-import ItemCard from "../../../Shared/ItemCard/ItemCard";
+import MenuCategory from "../MenuCategory/MenuCategory";
+import dessertCover from '../../../assets/menu/chef-service.jpg'
+import pizzaCover from '../../../assets/menu/pizza-bg.jpg'
+import saladCover from '../../../assets/menu/salad-bg.jpg'
+import soupCover from '../../../assets/menu/soup-bg.jpg'
 
 const Menu = () => {
   const [items, loading] = useMenu();
@@ -30,11 +34,33 @@ const Menu = () => {
           subHeading={"---Don't miss---"}
         ></SectionTitle>
       </div>
-      <div className="grid md:grid-cols-2 gap-10 p-4 md:p-8">
-        {offered?.map((offer) => (
-          <ItemCard item={offer}></ItemCard>
-        ))}
-      </div>
+      <MenuCategory
+      items={offered}
+      ></MenuCategory>
+      <MenuCategory
+      subTitle={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."}
+      title={"DESSERTS"}
+      coverImg={dessertCover}
+      items={dessert}
+      ></MenuCategory>
+      <MenuCategory
+      subTitle={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s,"}
+      title={"PIZZA"}
+      coverImg={pizzaCover}
+      items={pizza}
+      ></MenuCategory>
+      <MenuCategory
+      subTitle={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s,"}
+      title={"SALAD"}
+      coverImg={saladCover}
+      items={salad}
+      ></MenuCategory>
+      <MenuCategory
+      subTitle={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s,"}
+      title={"SOUP"}
+      coverImg={soupCover}
+      items={soup}
+      ></MenuCategory>
     </div>
   );
 };
