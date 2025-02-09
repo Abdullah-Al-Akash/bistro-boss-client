@@ -35,29 +35,30 @@ const Menu = () => {
         ></SectionTitle>
       </div>
       <MenuCategory
+      title={"salad"}
       items={offered}
       ></MenuCategory>
       <MenuCategory
       subTitle={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."}
-      title={"DESSERTS"}
+      title={"dessert"}
       coverImg={dessertCover}
       items={dessert}
       ></MenuCategory>
       <MenuCategory
       subTitle={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s,"}
-      title={"PIZZA"}
+      title={"pizza"}
       coverImg={pizzaCover}
       items={pizza}
       ></MenuCategory>
       <MenuCategory
       subTitle={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s,"}
-      title={"SALAD"}
+      title={"salad"}
       coverImg={saladCover}
       items={salad}
       ></MenuCategory>
       <MenuCategory
       subTitle={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s,"}
-      title={"SOUP"}
+      title={"soup"}
       coverImg={soupCover}
       items={soup}
       ></MenuCategory>
